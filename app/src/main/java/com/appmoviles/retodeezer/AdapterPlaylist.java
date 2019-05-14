@@ -3,6 +3,7 @@ package com.appmoviles.retodeezer;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -49,6 +50,12 @@ public class AdapterPlaylist extends RecyclerView.Adapter<AdapterPlaylist.Custom
         ImageView img = (ImageView) holder.root.findViewById(R.id.iv_image);
         Glide.with(holder.root.getContext()).load(data.get(position).getSmallImageUrl()).into(img);
 
+        holder.root.findViewById(R.id.renglon_playlist).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(data.get(position));
+            }
+        });
     }
 
     @Override
@@ -62,6 +69,18 @@ public class AdapterPlaylist extends RecyclerView.Adapter<AdapterPlaylist.Custom
         }
         notifyDataSetChanged();
     }
+
+    //OBSERVER
+    public interface OnItemClickListener{
+        void onItemClick(Playlist playlist);
+    }
+
+    private OnItemClickListener listener;
+
+    public void setListener(OnItemClickListener listener){
+        this.listener = listener;
+    }
+
 
 
 }

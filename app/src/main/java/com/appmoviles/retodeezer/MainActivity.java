@@ -1,5 +1,7 @@
 package com.appmoviles.retodeezer;
 
+import android.Manifest;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
 import com.deezer.sdk.network.connect.DeezerConnect;
@@ -19,7 +22,7 @@ import com.deezer.sdk.network.request.event.RequestListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterPlaylist.OnItemClickListener{
 
     public static final String APP_ID = "347404";
     private DeezerConnect deezerConnect;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         imbn_buscar = findViewById(R.id.imbn_buscar);
 
         adapterPlaylist = new AdapterPlaylist();
+        adapterPlaylist.setListener(this);
         lista_resultados.setLayoutManager(new LinearLayoutManager(this));
         lista_resultados.setAdapter(adapterPlaylist);
 
@@ -73,12 +77,21 @@ public class MainActivity extends AppCompatActivity {
                     request = DeezerRequestFactory.requestSearchPlaylists(et_buscar_playlist.getText().toString());
                     request.setId("Playlist request");
                     deezerConnect.requestAsync(request, listener);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Debe ingresar algo para realiar la búsqueda", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+
+
     }
 
-
-
+    @Override
+    public void onItemClick(Playlist playlist) {
+        Intent i = new Intent(MainActivity.this, PlaylistActivity.class);
+        i.putExtra("id_playlist", playlist.getId());
+        Log.e(">>>",playlist.getId()+"");
+        startActivity(i);
+    }
 }
