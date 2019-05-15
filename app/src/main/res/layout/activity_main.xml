@@ -9,14 +9,14 @@
         android:id="@+id/et_buscar_playlist"
         android:hint="Buscar una lista de reproducción"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/imbn_buscar"/>
+        android:layout_toLeftOf="@+id/imbn_buscar" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imbn_buscar"
         android:layout_alignParentRight="true"
-        android:src="@mipmap/ic_launcher_round"/>
+        android:src="@drawable/buscar"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterPlaylist.O
 
                 if (et_buscar_playlist!=null && !et_buscar_playlist.getText().toString().equals("")) {
                     request = DeezerRequestFactory.requestSearchPlaylists(et_buscar_playlist.getText().toString());
-                    request.setId("Playlist request");
+                    request.setId("Playlists request");
                     deezerConnect.requestAsync(request, listener);
                 } else {
                     Toast.makeText(getApplicationContext(), "Debe ingresar algo para realiar la búsqueda", Toast.LENGTH_SHORT).show();
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements AdapterPlaylist.O
     public void onItemClick(Playlist playlist) {
         Intent i = new Intent(MainActivity.this, PlaylistActivity.class);
         i.putExtra("id_playlist", playlist.getId());
-        Log.e(">>>",playlist.getId()+"");
+        Log.e("MainActivity",playlist.getId()+"");
         startActivity(i);
     }
 }

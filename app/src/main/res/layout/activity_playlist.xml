@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlaylistActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/barra_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6666ff">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_atras"
+            android:src="@drawable/izquierda" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Buscar Playlist"
+            android:textSize="18dp"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_imagen_lista"
+        android:layout_below="@+id/barra_playlist"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la playlist"
+        android:id="@+id/tv_nombre_playlist"
+        android:layout_below="@+id/iv_imagen_lista"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_descripcion"
+        android:layout_below="@+id/tv_nombre_playlist"
+        android:text="Descripción playlist..."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_informacion_playlist"
+        android:layout_below="@+id/tv_descripcion"
+        android:text="(# canciones) (# fans)"
+        android:padding="10dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lista_tracks"
+        android:layout_below="@+id/tv_informacion_playlist"
+        android:paddingTop="10dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.deezer.sdk.model.Playlist;
+import com.deezer.sdk.model.Track;
 
 import java.util.ArrayList;
 

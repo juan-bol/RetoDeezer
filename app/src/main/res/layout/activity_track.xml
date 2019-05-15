@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/barra_track"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6666ff">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_atras_track"
+            android:src="@drawable/izquierda" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Ver Canción"
+            android:textSize="18dp"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@+id/barra_track">
+
+        <ImageView
+            android:id="@+id/iv_imagen_cancion"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#A0A0A0" />
+
+        <TextView
+            android:id="@+id/tv_nombre_cancion_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre Canción"
+            android:textSize="18dp"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_artista_cancion_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artista Canción"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Álbum Canción"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_duracion"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Duración Canción"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_escuchar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#6666ff"
+            android:text="Escuchar"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
