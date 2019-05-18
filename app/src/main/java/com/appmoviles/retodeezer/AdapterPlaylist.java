@@ -47,9 +47,9 @@ public class AdapterPlaylist extends RecyclerView.Adapter<AdapterPlaylist.Custom
     public void onBindViewHolder(final CustomViewHolder holder, final int position) {
         ((TextView) holder.root.findViewById(R.id.tv_nombre_lista)).setText(data.get(position).getTitle());
         ((TextView) holder.root.findViewById(R.id.tv_nombre_creador)).setText(data.get(position).getCreator().getName());
-        //((TextView) holder.root.findViewById(R.id.tv_numero_items)).setText(data.get(position).getTracks().size());
+        ((TextView) holder.root.findViewById(R.id.tv_numero_items)).setText("Id: "+data.get(position).getId()+"");
         ImageView img = (ImageView) holder.root.findViewById(R.id.iv_image);
-        Glide.with(holder.root.getContext()).load(data.get(position).getSmallImageUrl()).into(img);
+        Glide.with(holder.root.getContext()).load(data.get(position).getMediumImageUrl()).into(img);
 
         holder.root.findViewById(R.id.renglon_playlist).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -75,7 +75,7 @@ public class TrackActivity extends AppCompatActivity {
             public void onResult(Object o, Object o1) {
                 Track track = (Track) o;
                 previewUrl = track.getPreviewUrl();
-                Glide.with(getApplicationContext()).load(track.getAlbum().getSmallImageUrl()).into(iv_imagen_cancion);
+                Glide.with(getApplicationContext()).load(track.getAlbum().getMediumImageUrl()).into(iv_imagen_cancion);
                 tv_nombre_cancion.setText(track.getTitle());
                 tv_artista_cancion.setText(track.getArtist().getName());
                 tv_album_cancion.setText(track.getAlbum().getTitle());

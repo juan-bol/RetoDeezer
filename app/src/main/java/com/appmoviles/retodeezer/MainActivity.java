@@ -2,6 +2,7 @@ package com.appmoviles.retodeezer;
 
 import android.Manifest;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements AdapterPlaylist.O
     private EditText et_buscar_playlist;
     private ImageButton imbn_buscar;
 
+    private LinearLayout layoutDeezer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements AdapterPlaylist.O
         adapterPlaylist.setListener(this);
         lista_resultados.setLayoutManager(new LinearLayoutManager(this));
         lista_resultados.setAdapter(adapterPlaylist);
+
+        layoutDeezer = findViewById(R.id.layout_deezer);
 
         deezerConnect = DeezerConnect.forApp(APP_ID).withContext(this).build();
 

@@ -47,9 +47,9 @@ public class AdapterTrack extends RecyclerView.Adapter<AdapterTrack.CustomViewHo
     public void onBindViewHolder(final AdapterTrack.CustomViewHolder holder, final int position) {
         ((TextView) holder.root.findViewById(R.id.tv_nombre_cancion)).setText(data.get(position).getTitle());
         ((TextView) holder.root.findViewById(R.id.tv_artista_cancion)).setText(data.get(position).getArtist().getName());
-        //((TextView) holder.root.findViewById(R.id.tv_ano_lanzamiento)).setText(data.get(position).getReleaseDate().getYear());
+        ((TextView) holder.root.findViewById(R.id.tv_ano_lanzamiento)).setText("Rank: "+data.get(position).getRank()+"");
         ImageView img = (ImageView) holder.root.findViewById(R.id.iv_image_track);
-        Glide.with(holder.root.getContext()).load(data.get(position).getAlbum().getSmallImageUrl()).into(img);
+        Glide.with(holder.root.getContext()).load(data.get(position).getAlbum().getImageUrl()).into(img);
 
         holder.root.findViewById(R.id.renglon_track).setOnClickListener(new View.OnClickListener() {
             @Override
